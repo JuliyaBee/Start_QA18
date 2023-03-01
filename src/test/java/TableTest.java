@@ -29,8 +29,12 @@ WebDriver wd;
         System.out.println("Amount of table columns are " +columns.size());
         List<WebElement>rows=wd.findElements(By.cssSelector("table#customers.ws-table-all td"));
         System.out.println("Amount of table rows are "+ rows.size()/columns.size());
-        List<WebElement>row3=wd.findElements(By.cssSelector("table#customers.ws-table-all tbody:nth-child(4)"));
-         List<WebElement>lastColmn=wd.findElements(By.cssSelector("table#customers.ws-table-all tbody:nth-child(3n+3"));
+        WebElement row3=wd.findElement(By.cssSelector("table#customers.ws-table-all tbody tr:nth-child(3)"));
+        System.out.println(rows.size());
+        //List<WebElement>row3=wd.findElements(By.cssSelector("#customers tr:nth-child(3)"));
+         List<WebElement>lastColmn=wd.findElements(By.cssSelector("table#customers.ws-table-all tbody tr:nth-child(3n+3"));
+        System.out.println(lastColmn.size());
+       // List<WebElement>lastColm=wd.findElements(By.cssSelector("#customers tr td:nth-child(3)"));
     }
 
     @AfterMethod
